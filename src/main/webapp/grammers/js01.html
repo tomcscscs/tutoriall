@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="checkbox" id="chk"/>
+	<a href="https://www.naver.com" onclick="event.preventDefault();">네이버</a>
+	
+	
+	<form id="form">
+		<input type="text"/>
+		<input type="password"/>
+		<button type="submit">제출</button>
+		
+	</form>
+	
+	<script>
+		document.querySelector("#form").onsubmit = function(e) {
+			const $input =[...e.target.querySelectorAll("input")];
+			
+			let cnt = 0;
+			for(let one of $input) {
+				if(one.value===''){
+					
+					cnt++;
+				}
+			}
+			if(cnt>0) {
+				window.alert("모든값은 필수 입니다.");
+				e.preventDefault();
+				
+				
+			}
+			
+			console.log($input)
+			
+			
+				
+			}
+			
+			
+			
+	
+			
+			
+		
+		
+		
+		
+	</script>
+
+</body>
+</html>

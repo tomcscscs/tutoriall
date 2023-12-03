@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+</head>
+
+<body>
+	<div>
+		<span style="font-size: 20em" id="logo" onmousewheel="logoWheelHandle(event);"> <!--폰트사이즈 em으로 잡아줘야한다.-->
+			JAVASCRIPT
+		</span>
+	</div>
+
+	<div>
+		<button id="small">작아진다.</button>
+		<button id="big">커진다..</button>
+
+	</div>
+
+	<script>
+		const $logo = document.querySelector("#logo");
+
+		function logoWheelHandle(event) {
+			const e = new PointerEvent("click");
+			if (e.wheelDelta > 0) {
+				document.querySelector("#big").dispatchEvent(e);
+
+
+			} else {
+				document.querySelector("#small").dispatchEvent(e);
+
+			}
+
+
+		}
+
+		document.querySelector("#small").onclick = function (evt) {
+			console.log($logo.style.fontSize);
+			$logo.style.fontSize = (+$logo.style.fontSize.replace("em", "") - 0.2) + "em";
+			console.log($logo.style.fontSize);
+		}
+
+		document.querySelector("#big").onclick = function (evt) {
+			console.log($logo.style.fontSize);
+			$logo.style.fontSize = (+$logo.style.fontSize.replace("em", "") + 0.2) + "em";
+			console.log($logo.style.fontSize);
+		}
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

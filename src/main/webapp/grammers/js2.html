@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	
+	<div style="height: 60vh; display: flex; justify-content: center; align-items: center;">
+		<span id="logo">JAVASCRIPT</span>
+		</div>
+		
+		<div>
+			<button id="small">작아진다.</button>
+			<button id="big">커진다.</button>
+		</div>
+			
+	<script>
+		const $logo =document.querySelector("#logo");
+		
+		document.querySelector("#small").onclick =function(e){
+			console.log(e);
+			console.log($logo.style.fontSize);
+			$logo.style.fontSize -= 0.2;
+		};
+		
+		document.querySelector("#big").addEventListener("click",function(e) {
+			console.log(e);
+			console.log($logo.style.fontSize, 1*$logo.style.fontSize.replace("em","") + 0.2);
+			
+			$logo.style.fontSize =$logo.style.fontSize + 0.2;
+			
+			
+		});
+			
+
+			
+	
+		
+		
+			
+			
+		
+		
+	
+	
+	
+	
+	
+		
+	
+	</script>
+		
+		
+		
+
+</body>
+</html>
